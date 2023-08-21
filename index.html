@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Tailwind and daisyUI -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- custom css -->
+    <style>
+     
+    
+      input[type="color"]{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: transparent;
+        border: none;
+      }
+      input[type="color"]::-webkit-color-swatch{
+        border-radius: 15px;
+        box-sizing: 0 0 0 2px #ffff,0 0 0 0 3px #020402;
+      }
+      .button{
+        border: none;
+        color: #131c35;
+        padding: 10px 20px;
+        border-radius: 3px;
+        cursor: pointer;
+        user-select: none;
+      }
+      .button:hover{
+        background: #40576d1a;
+        
+      }
+      .button.active{
+        background: #73b1e333;
+        color: #5271ff;
+      }
+    </style>
+    <title>TextEditor</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <!-- text editor section -->
+      <section class="bg-[#8CC3FF] mt-10 pb-14 mx-[100px] rounded-lg shadow-md">
+        <!-- text editor title -->
+        <h1 class="text-5xl text-center py-5">TextEditor</h1>
+    
+        <!-- text editor container  -->
+        <div class="mx-auto bg-blue-200 w-[70%] border-2 border-black rounded-lg shadow-md">
+          <div class="my-6">
+            <div class="flex justify-between mx-6">
+              <!-- Text font change -->
+              <div class="flex gap-[40px]">
+                <button id="bold-text" onclick="makeBold()" class="button text-xl"><i class="fa-solid fa-b"></i></button>
+                <button id="font-italic" onclick="textItalic()" class="button text-xl"><i class="fa-solid fa-italic"></i></button>
+                <button id="underline-text" onclick="textUnderLine()" class="button text-xl"><i class="fa-solid fa-underline"></i></button>
+              </div>
+              <!-- Text Align change -->
+              <div  class="flex gap-[40px] ">
+                <button id="al" onclick="l()" class="button text-xl"><i class="fa-solid fa-align-left"></i></button>
+                <button id="ac" onclick="c()" class="button text-xl"><i class="fa-solid fa-align-center"></i></button>
+                <button id="ar" onclick="r()" class="button text-xl"><i class="fa-solid fa-align-right"></i></button>
+                <button id="aj" onclick="j()" class="button text-xl"><i class="fa-solid fa-align-justify"></i></button>
+              </div>
+              <!-- input color fonts style change -->
+              <div class="flex gap-5">
+                <input id="font-size" onchange="textSize()" class="w-[60px] px-2 bg-transparent text-xl" type="number" value="16" max="40" />
+                <button id="font-case" onclick="fc()" class="button text-xl">aA</button>
+                <input id="tc" onchange="color()" class="rounded-lg mx-[10px] my-[16px]  " type="color" />
+              </div>
+            </div>
+          </div>
+          <hr class="bg-black h-1 rounded-lg mb-6 w-[96%] mx-auto" />
+          <!-- TEXT AREA-------------------- -->
+          <div class=" pt-0 p-5">
+            <textarea class="resize-none w-full p-5 
+          h-[400px]" name="" id="text-area"></textarea>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./js/js.js"></script>
+  </body>
+</html>
